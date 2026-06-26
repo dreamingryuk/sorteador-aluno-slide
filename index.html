@@ -8,48 +8,96 @@
 </head>
 <body>
     <header>
-        <div style="background-color: #000;">
+        <div>
             <a href="#">Sorteador</a>
         </div>
         
-        <div onclick="redirecionarConfig()">
+        <div onclick="redirecionarConfig()" style="background-color: #000;">
             <a href="./config.html">Configurações</a>
         </div>
     </header>
 
     <main>
         <aside class="aluno">
-            <select id="turma">
-                <option>--</option>
-                <option>2G</option>
-            </select>
+            <div class="control-row">
+                <select id="turma">
+                    <option>--</option>
+                </select>
+                <button onclick="adicionarTurma()" class="adicionar">+</button>
+            </div>
 
-            <button onclick="adicionarTurma()">+</button>
-
-            <div id="aluno">Nenhum aluno sorteado ainda.</div>
-            <div id="numAluno"></div>
+            <div id="aluno" class="card empty">
+                <div id="aluno-text" class="card-text">Nenhum aluno sorteado ainda.</div>
+                <div id="numAluno" class="card-number"></div>
+            </div>
 
             <div id="historico">
-                
+
             </div>
         </aside>
 
+
         <section class="sorteador">
             <button onclick="sortear()">Sortear</button>
+
+            <div id="opcoes">
+                <input type="radio" name="resultado" id="acertou">
+                <label for="acertou" class="btn acertou">Acertou</label>
+
+                <input type="radio" name="resultado" id="meio-certo">
+                <label for="meio-certo" class="btn meio">Meio certo</label>
+
+                <input type="radio" name="resultado" id="errou">
+                <label for="errou" class="btn errou">Errou</label>
+            </div>
+
+            <button onclick="salvar()" id="salvar">Salvar</button>
         </section>
 
+
         <aside class="slide">
-            <select id="slide">
-                <option>--</option>
-                <option>Slide 1</option>
-            </select>
+            <div class="control-row">
+                <select id="slide">
+                    <option>--</option>
+                </select>
+                <button onclick="adicionarSlide()" class="adicionar">+</button>
+            </div>
 
-            <button onclick="adicionarSlide()">+</button>
-
-            <div id="pergunta">Nenhuma pergunta sorteada ainda.</div>
+            <div id="pergunta" class="card empty">
+                <div id="pergunta-text" class="card-text">Nenhuma pergunta sorteada ainda.</div>
+                <div id="pergunta-numero" class="card-number"></div>
+            </div>
+            <button id="fullscreenSlide" class="btn small" onclick="mostrarSlideFull()" style="display:none;">Mostrar em tela cheia</button>
         </aside>
+
+        <!-- DIVS POPUP -->
+
+        <div id="adicionarTurmaPopup" class="popup">
+            <div class="popup-content popup-turma">
+                <button onclick="fechar()" class="fechar">&times;</button>
+                <h2>Adicionar Turma</h2>
+                <input type="text" id="novaTurma" placeholder="Nome da turma">
+                <textarea id="novosAlunos" placeholder="Ana
+Maria
+João
+Pedro"></textarea>
+                <button onclick="salvarTurma()">Salvar</button>
+            </div>
+        </div>
+
+        <div id="adicionarSlidePopup" class="popup">
+            <div class="popup-content popup-slide">
+                <button onclick="fechar()" class="fechar">&times;</button>
+                <h2>Adicionar Slide</h2>
+                <input type="text" id="novoSlide" placeholder="Nome do slide">
+                <input type="file" id="novasPerguntas">
+                <button onclick="salvarSlide()">Salvar</button>
+            </div>
+        </div>
+
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
 body {
     background-color: #000;
     color: #7c7c7c;
+    overflow-y: scroll;
 }
 
 header {
@@ -28,10 +29,246 @@ main {
     display: flex;
     justify-content: space-around;
     margin-top: 10%;
+    gap: 2rem;
+}
+
+.aluno, .slide {
+    margin-top: 1rem;
+}
+
+.aluno, .slide {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sorteador {
+    flex: 1;
+    min-width: 300px;
+}
+
+.adicionar {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0;
+    background-color: #000;
+    color: #7c7c7c;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-left: 0;
+}
+
+#salvar, #opcoes {
+    display: none;
+}
+
+.control-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+select {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0;
+    background-color: #000;
+    color: #7c7c7c;
+    font-family: 'Times New Roman', Times, serif;
+    min-width: 180px;
+}
+
+#opcoes {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#opcoes input[type="radio"] {
+    display: none;
+}
+
+.btn {
+    padding: 10px 24px;
+    border: 1px solid #3e3e3e;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    user-select: none;
+}
+
+#opcoes input[type="radio"]:checked + .btn {
+    background: #3e3e3e;
+}
+
+.sorteador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
 }
 
 .sorteador button {
     font-size: 3rem;
     padding: 0.7rem 7rem;
     border-radius: 0;
+    background-color: #000;
+    color: #7c7c7c;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sorteador button:hover {
+    background-color: #0f0f0f;
+}
+
+.card {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    min-height: 220px;
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #3e3e3e;
+    background-color: #050505;
+    color: #fff;
+}
+
+.card.empty {
+    color: #7c7c7c;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.card-number {
+    font-size: 1.2rem;
+    color: #9a9a9a;
+}
+
+.btn.small {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+}
+
+#fullscreenSlide {
+    margin-top: 1rem;
+    background-color: #000;
+    color: #7c7c7c;
+    border: 1px solid #3e3e3e;
+}
+
+#fullscreenSlide:hover {
+    background-color: #1a1a1a;
+}
+
+/* DIVS POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    padding: 2rem;
+    border: 1px solid #3e3e3e;
+    width: 80%;
+    max-width: 500px;
+    gap: 1rem;
+}
+
+.popup-turma {
+    margin: 5% auto;
+}
+
+.popup-slide {
+    margin: 15% auto;
+}
+
+.popup-content h2 {
+    color: #7c7c7c;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.popup-content input[type="text"],
+.popup-content textarea,
+.popup-content input[type="file"] {
+    background-color: #0f0f0f;
+    color: #7c7c7c;
+    border: 1px solid #3e3e3e;
+    padding: 0.7rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9rem;
+}
+
+.popup-content textarea {
+    resize: vertical;
+    height: 300px;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+}
+
+.popup-content input[type="file"] {
+    padding: 0.3rem;
+}
+
+.popup-content button {
+    background-color: #0f0f0f;
+    color: #7c7c7c;
+    border: 1px solid #3e3e3e;
+    padding: 0.7rem 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.popup-content button:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.fechar {
+    align-self: flex-end;
+    background-color: transparent !important;
+    border: none !important;
+    color: #7c7c7c;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 !important;
+    margin: -1rem -1rem 0 0 !important;
+}
+
+.fechar:hover {
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+.novosAlunos {
+    height: 10rem;
 }
