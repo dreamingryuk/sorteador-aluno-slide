@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de aluno-slide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div style="background-color: #000;">
+            <a href="#">Sorteador</a>
+        </div>
+        
+        <div onclick="redirecionarConfig()">
+            <a href="./config.html">Configurações</a>
+        </div>
+    </header>
+
+    <main>
+        <aside class="aluno">
+            <select id="turma">
+                <option>--</option>
+                <option>2G</option>
+            </select>
+
+            <button onclick="adicionarTurma()">+</button>
+
+            <div id="aluno">Nenhum aluno sorteado ainda.</div>
+            <div id="numAluno"></div>
+
+            <div id="historico">
+                
+            </div>
+        </aside>
+
+        <section class="sorteador">
+            <button onclick="sortear()">Sortear</button>
+        </section>
+
+        <aside class="slide">
+            <select id="slide">
+                <option>--</option>
+                <option>Slide 1</option>
+            </select>
+
+            <button onclick="adicionarSlide()">+</button>
+
+            <div id="pergunta">Nenhuma pergunta sorteada ainda.</div>
+        </aside>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
