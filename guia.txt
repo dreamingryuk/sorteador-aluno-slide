@@ -1,0 +1,45 @@
+AQUI SERA ESCRITO TUDO O QUE TERA NO PROJETO
+
+1. Sorteador de aluno
+
+- deve sortear do primeiro ao ultimo da lista
+- deve mostrar o nome e o numero do aluno sorteado
+- deve conter um checkbox radio para dizer se ele acertou/meio certo/errou
+
+    1.1. Adicionar lista de alunos
+
+    - ao lado do menu dropdown-alunos, aparece um botao +, onde é possivel adicionar a lista completa dos alunos por turma e o nome da turma
+    - ao clicar em adicionar, salva no localStorage do navegador
+
+2. Sorteador de slides
+
+- deve sortear do primeiro ao ultimo slide
+- deve mostrar o slide sorteado borrado e seu numero
+- deve conter um botao "mostrar slide" onde mostra o slide sorteado em tela cheia
+- deve excluir da lista de sorteio o slide já sorteado
+
+    2.1. Adicionar slide
+
+    - ao lado do menu dropdown-slides, aparece um botao +, onde é possivel adicionar o arquivo PDF do slide das perguntas previamente feito
+    - ao clicar em adicionar, salva no localStorage do navegador
+
+4. Configuracoes
+
+- deve conter um botao de importar e exportar databank
+- deve conter opcao de borrar ou nao a previa do slide de pergunta
+- deve conter opcao de mostrar ou nao o historico do aluno no sorteio
+- deve conter um botao de visualisar historico
+- deve conter a lista de slides e a lista de turmas
+- cada turma ou slide pode ser editado ou removido
+
+    4.1. Save no localStorage
+
+    - todo sorteio é salvo num JSON estruturado no localStorage do navegador
+    - cada sorteio incrementa a este JSON
+    - ao clicar em exportar databank, o JSON pode ser salvo no computador
+    - ao clicar em importar databank, o usuario pode escolher um databank com todas as configuracoes + historico do seu computador para importar ao localStorage
+
+    4.2. Historico do aluno
+
+    - ao clicar em visualisar historico, o usuario primeiro seleciona a turma, entao todos os alunos serao mostrados em ordem da lista importada. Ao lado, tera a pontuacao: se acertou, 1 ponto, se meio certo, 0,5 ponto e se errou nao adiciona. Mostra tambem o numero de perguntas respondida, e um botao de editar historico do aluno
+    - ao clicar em editar historico do aluno, ele abre uma janela com o numero das perguntas, se acertou ou nao, (os dois podem ser editados) e um botao de salvar que atualiza o JSON
